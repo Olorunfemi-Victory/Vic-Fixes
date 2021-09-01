@@ -1,0 +1,91 @@
+﻿@model StudentInformation
+
+@{
+    ViewData["Title"] = "Delete Student";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Delete Student</h4>
+                    </div>
+                    <div class="content">
+                        <form asp-controller="Home" asp-action="DeletePost" method="post">
+                            <input type="hidden" asp-for="StudentId" />
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label>First Name</label>
+                                        <input type="text" asp-for="FirstName" class="form-control" placeholder="First Name" disabled>
+                                        @*<span asp-validation-for="FirstName" class="text-danger"></span>*@
+                                    </div>
+                             </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Gender</label>
+                                                <input type="text" asp-for="Gender" class="form-control" placeholder="Address">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Age</label>
+                                                <input type="number" asp-for="Age" class="form-control" placeholder="Sex">
+                                                @*<select asp-for="Sex" class="form-control form-select custom-select" placeholder="Sex" asp-items="Html.GetEnumSelectList<Gender>()">
+                        <option value="">Select Sex</option>
+                    </select>*@
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Email</label>
+                                                <input type="email" asp-for="Email" class="form-control" placeholder="Phone Number">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Address</label>
+                                                <input type="text" asp-for="Address" class="form-control" placeholder="Email">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>PhoneNumber</label>
+                                                <input type="number" asp-for="PhoneNumber" class="form-control" placeholder="Status">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Last Name</label>
+                                        <input type="text" asp-for="LastName" class="form-control" placeholder="Last Name" disabled>
+                                    </div>
+                                </div>
+                               
+                            @*<div asp-validation-summary="All" class="text-danger"></div>*@
+                            <div class="">
+                                @*<button type="submit" class="btn btn-danger btn-fill">Delete Profile</button>*@
+                                <input type="submit" class="btn btn-danger btn-fill" value="Delete" />
+                                <a asp-controller="home" asp-action="ViewStudent" class="btn btn-warning btn-fill">Cancel</a>
+                            </div>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
